@@ -25,12 +25,14 @@ a {
   color: inherit;
 }
 
-/* adjustable sections to partician page */
+/* adjustable sections to partician page 
 .section-dark {
   background-color: #1d1e22;
   padding: 40px 20px;
 }
+*/
 
+/* Section background variants */
 .section-light {
   background-color: #eeb42f;
   color: #000;
@@ -89,12 +91,17 @@ a {
   color: #fff;
 }
 
-/* allows easy consistent content divisions */
+/* Divider with transparent buffer inside dot-bg */
+.divider-wrapper {
+  /* buffer space, shows dots behind */
+  padding: 20px 0;
+}
 .divider-line {
   height: 4px;
   background-color: #eeb42f;
-  margin: 20px 0;
 }
+
+
 
 .logo {
   max-width: 100px;
@@ -128,4 +135,173 @@ Keeps logos from getting too small but still flexible
   max-width: 150px;
   max-height: 80px;
   object-fit: contain;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-section {
+  display: flex;
+  background-image: url('images/logos/Handshake_TRANSP-2.png');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  color: white;
+  gap: 30px;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-left {
+  flex: 2;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-left h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-left .subheading {
+  background-color: #f1c40f;
+  color: black;
+  display: inline-block;
+  padding: 5px 15px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-left a {
+  color: #66a3ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Graphic Design page 1 parts */
+.res-good-quote {
+  flex: 1;
+  background-color: #f1c40f;
+  color: black;
+  padding: 20px;
+  border: 2px solid #333;
+  font-size: 14px;
+}
+
+/* moon stuff */
+.orbit-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+/* 'earth' circle shape */
+.circle-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* moon dot to orbit 'earth' */
+.orbit-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -125px);
+  animation: orbit 6s linear infinite;
+}
+
+/* moon orbiting path magic */
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(125px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(125px) rotate(-360deg); }
+}
+
+/* design faded dot pattern  */
+/*first two gradients make a dotted grid pattern, 3rd gradient is a radial fade toward the edges 
+.dot-fade-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a;
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
+  background-size: 20px 20px, 20px 20px, 100% 100%;
+  background-position: 0 0, 10px 10px, center;
+}
+  */
+
+/* adjustable sections to partician page 
+.section-dark {
+  background-color: #1d1e22;
+  padding: 40px 20px;
+}*/ 
+
+.section-dark {
+  background-color: #1a1a1a;
+  padding: 20px 20px;
+
+  background-image:
+    /* first two create the dot grid: */
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px),
+    /* third layer is the center-to-edge fade */
+    radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+  background-size: 20px 20px, 20px 20px, cover;
+  background-position: 0 0, 10px 10px, center;
+  background-repeat: repeat;
+}
+
+/* Shared dot-background + vignette for dark sections */ /*
+.dot-bg {
+  background-color: #1a1a1a;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+  background-size: 20px 20px, 20px 20px, cover;
+  background-position: 0 0, 10px 10px, center;
+  background-repeat: repeat;
+  padding: 40px 20px;
+} */
+
+/* Mobile friendly background dots */
+@media (max-width: 600px) {
+  .section-dark {
+    background-size: 15px 15px, 15px 15px, cover;
+  }
+}
+
+.site-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-footer {
+  position: relative;
+  text-align: center;
+  padding: 0;
+}
+
+.site-footer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons sit on top of the image */
+.footer-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
