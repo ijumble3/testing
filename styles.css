@@ -29,6 +29,15 @@ body {
   color: #fff;
 }
 
+/* wrapper, Help w/ Apply dot pattern globally */
+.page-background {
+  background-color: #0f0f0f;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: top left;
+}
+
+
 /* Simplified to let body's background show */
 .section-dark {
   background: transparent;
